@@ -8,10 +8,13 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 import requests
 from bs4 import BeautifulSoup
 from langchain_core.messages import BaseMessage, AIMessage
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from typing import List
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+import pydantic
 
+class Config:
+    arbitrary_types_allowed = True
 
 
 class InMemoryHistory(BaseChatMessageHistory, BaseModel):
@@ -25,7 +28,8 @@ class InMemoryHistory(BaseChatMessageHistory, BaseModel):
 
     def clear(self) -> None:
         self.messages = []
-
+    class Config:
+        arbitrary_types_allowed = True
 # Singleton pattern to manage the store variable
 class StoreManager:
     _instance = None
