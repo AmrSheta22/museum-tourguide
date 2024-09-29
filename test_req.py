@@ -5,8 +5,9 @@ url = "http://127.0.0.1:5000/process"
 
 # Define the data to be sent in the request
 data = {
-    "artifact_name": "Sirabis",  # Replace with an actual artifact ID
-    "question": r"D:\test.wav"  # Replace with your actual question
+    "artifact_name": "Sirabis",
+    "language": "ar",  # Replace with an actual artifact ID
+    "question": r"test\test3.mp3"  # Replace with your actual question
 }
 
 # Send a POST request to the API

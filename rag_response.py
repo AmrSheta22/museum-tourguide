@@ -88,7 +88,34 @@ def load_template():
 
         Guided Answer:"""
     return template
+def load_template_ar():
+    template= """استخدام المعلومات التالية حول التفاصيل والوصف المفصلين للأثر للإجابة على السؤال كما لو كنت مرشدًا سياحيًا. اجعل إجابتك قصيرة وأجب عن السؤال دون مقدمات.
+     
+    معلومات الأثر:
+    {categories}
+    
+    تفاصيل الأثر:
+    {details}
+    
+    سؤال: {question}
+    
+    الإجابة الموجهة:"""
+    return template
 
+def load_template_fr():
+    template = """
+        En utilisant les informations suivantes sur les détails et la description d'un artefact, répondez à la question comme si vous étiez un guide touristique. Si vous ne connaissez pas la réponse à la question, dites que vous ne savez pas. Gardez votre réponse brève et répondez à la question sans introductions.
+
+        Informations sur l'artefact:
+        {categories}
+
+        Détails de l'artefact:
+        {details}
+
+        Question: {question}
+
+        Réponse guidée:"""
+    return template
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     store_manager = StoreManager()
     store = store_manager.get_store()
