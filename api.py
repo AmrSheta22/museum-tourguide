@@ -12,7 +12,7 @@ template_ar = load_template_ar()
 template_fr = load_template_fr()
 with_message_history = initialize_model(template_en)
 last_langauge_intialized = "en"
-
+artifact_df = pd.read_csv("artifacts.csv")
 artifact_df = artifact_df.set_index("artifact_name")
 @app.route('/process', methods=['POST'])
 def process_artifact():
